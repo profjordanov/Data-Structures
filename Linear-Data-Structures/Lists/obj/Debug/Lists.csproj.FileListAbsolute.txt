@@ -1,0 +1,2 @@
+C:\Users\Pesho\Documents\Visual Studio 2017\Projects\DS\Skeletons\DS01-Lists\Linear-Data-Structures\Lists\bin\Debug\Lists.exe.config
+C:\Users\Pesho\Desktop\Linear-Data-Structures\Lists\bin\Debug\Lists.exe.config
