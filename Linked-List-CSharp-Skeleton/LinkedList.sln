@@ -9,6 +9,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tests.LinkedList", "Tests.L
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Undo List", "Undo List\Undo List.csproj", "{0B370D51-F22A-4DE0-B69B-6750B254B069}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LinkedStack", "LinkedStack\LinkedStack.csproj", "{022783B4-0AA2-4007-8126-CF8950E793A1}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +29,10 @@ Global
 		{0B370D51-F22A-4DE0-B69B-6750B254B069}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{0B370D51-F22A-4DE0-B69B-6750B254B069}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{0B370D51-F22A-4DE0-B69B-6750B254B069}.Release|Any CPU.Build.0 = Release|Any CPU
+		{022783B4-0AA2-4007-8126-CF8950E793A1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{022783B4-0AA2-4007-8126-CF8950E793A1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{022783B4-0AA2-4007-8126-CF8950E793A1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{022783B4-0AA2-4007-8126-CF8950E793A1}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
