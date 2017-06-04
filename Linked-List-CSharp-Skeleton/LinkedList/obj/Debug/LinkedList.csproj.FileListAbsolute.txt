@@ -1,1 +1,6 @@
 C:\Users\Jordan\Documents\GitHub\Data Structures\Linked-List-CSharp-Skeleton\LinkedList\bin\Debug\LinkedList.exe.config
+C:\Users\Jordan\Documents\GitHub\Data Structures\Linked-List-CSharp-Skeleton\LinkedList\bin\Debug\LinkedList.exe
+C:\Users\Jordan\Documents\GitHub\Data Structures\Linked-List-CSharp-Skeleton\LinkedList\bin\Debug\LinkedList.pdb
+C:\Users\Jordan\Documents\GitHub\Data Structures\Linked-List-CSharp-Skeleton\LinkedList\obj\Debug\LinkedList.csprojResolveAssemblyReference.cache
+C:\Users\Jordan\Documents\GitHub\Data Structures\Linked-List-CSharp-Skeleton\LinkedList\obj\Debug\LinkedList.exe
+C:\Users\Jordan\Documents\GitHub\Data Structures\Linked-List-CSharp-Skeleton\LinkedList\obj\Debug\LinkedList.pdb
