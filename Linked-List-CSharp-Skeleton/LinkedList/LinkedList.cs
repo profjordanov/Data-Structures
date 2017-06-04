@@ -3,7 +3,6 @@ using System.Collections;
 using System.Collections.Generic;
 
 
-//This is STACK
 public class LinkedList<T> : IEnumerable<T>
 {
     public class Node
