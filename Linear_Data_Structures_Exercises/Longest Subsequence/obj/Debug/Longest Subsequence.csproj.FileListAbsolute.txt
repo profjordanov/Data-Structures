@@ -1,0 +1,5 @@
+C:\Users\Jordan\Documents\GitHub\Data Structures\Linear_Data_Structures_Exercises\Longest Subsequence\bin\Debug\Longest Subsequence.exe.config
+C:\Users\Jordan\Documents\GitHub\Data Structures\Linear_Data_Structures_Exercises\Longest Subsequence\bin\Debug\Longest Subsequence.exe
+C:\Users\Jordan\Documents\GitHub\Data Structures\Linear_Data_Structures_Exercises\Longest Subsequence\bin\Debug\Longest Subsequence.pdb
+C:\Users\Jordan\Documents\GitHub\Data Structures\Linear_Data_Structures_Exercises\Longest Subsequence\obj\Debug\Longest Subsequence.exe
+C:\Users\Jordan\Documents\GitHub\Data Structures\Linear_Data_Structures_Exercises\Longest Subsequence\obj\Debug\Longest Subsequence.pdb

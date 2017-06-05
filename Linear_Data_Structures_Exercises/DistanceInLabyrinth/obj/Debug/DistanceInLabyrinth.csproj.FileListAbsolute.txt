@@ -1,0 +1,5 @@
+C:\Users\Jordan\Documents\GitHub\Data Structures\Linear_Data_Structures_Exercises\DistanceInLabyrinth\bin\Debug\DistanceInLabyrinth.exe.config
+C:\Users\Jordan\Documents\GitHub\Data Structures\Linear_Data_Structures_Exercises\DistanceInLabyrinth\bin\Debug\DistanceInLabyrinth.exe
+C:\Users\Jordan\Documents\GitHub\Data Structures\Linear_Data_Structures_Exercises\DistanceInLabyrinth\bin\Debug\DistanceInLabyrinth.pdb
+C:\Users\Jordan\Documents\GitHub\Data Structures\Linear_Data_Structures_Exercises\DistanceInLabyrinth\obj\Debug\DistanceInLabyrinth.exe
+C:\Users\Jordan\Documents\GitHub\Data Structures\Linear_Data_Structures_Exercises\DistanceInLabyrinth\obj\Debug\DistanceInLabyrinth.pdb

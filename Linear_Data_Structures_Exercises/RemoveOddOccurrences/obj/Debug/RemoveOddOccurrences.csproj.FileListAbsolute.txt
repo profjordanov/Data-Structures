@@ -1,0 +1,5 @@
+C:\Users\Jordan\Documents\GitHub\Data Structures\Linear_Data_Structures_Exercises\RemoveOddOccurrences\bin\Debug\RemoveOddOccurrences.exe.config
+C:\Users\Jordan\Documents\GitHub\Data Structures\Linear_Data_Structures_Exercises\RemoveOddOccurrences\bin\Debug\RemoveOddOccurrences.exe
+C:\Users\Jordan\Documents\GitHub\Data Structures\Linear_Data_Structures_Exercises\RemoveOddOccurrences\bin\Debug\RemoveOddOccurrences.pdb
+C:\Users\Jordan\Documents\GitHub\Data Structures\Linear_Data_Structures_Exercises\RemoveOddOccurrences\obj\Debug\RemoveOddOccurrences.exe
+C:\Users\Jordan\Documents\GitHub\Data Structures\Linear_Data_Structures_Exercises\RemoveOddOccurrences\obj\Debug\RemoveOddOccurrences.pdb
