@@ -1,0 +1,6 @@
+C:\Users\Jordan\Documents\GitHub\Data Structures\LinearDataStructures_STACKSnQUEUES\LinkedStack\bin\Debug\LinkedStack.exe.config
+C:\Users\Jordan\Documents\GitHub\Data Structures\LinearDataStructures_STACKSnQUEUES\LinkedStack\bin\Debug\LinkedStack.exe
+C:\Users\Jordan\Documents\GitHub\Data Structures\LinearDataStructures_STACKSnQUEUES\LinkedStack\bin\Debug\LinkedStack.pdb
+C:\Users\Jordan\Documents\GitHub\Data Structures\LinearDataStructures_STACKSnQUEUES\LinkedStack\obj\Debug\LinkedStack.csprojResolveAssemblyReference.cache
+C:\Users\Jordan\Documents\GitHub\Data Structures\LinearDataStructures_STACKSnQUEUES\LinkedStack\obj\Debug\LinkedStack.exe
+C:\Users\Jordan\Documents\GitHub\Data Structures\LinearDataStructures_STACKSnQUEUES\LinkedStack\obj\Debug\LinkedStack.pdb
