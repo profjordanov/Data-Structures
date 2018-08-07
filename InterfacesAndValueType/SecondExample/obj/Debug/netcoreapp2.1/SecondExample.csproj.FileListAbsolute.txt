@@ -1,0 +1,11 @@
+C:\Users\yoryordanov\source\repos\InterfacesAndValueType\SecondExample\bin\Debug\netcoreapp2.1\SecondExample.deps.json
+C:\Users\yoryordanov\source\repos\InterfacesAndValueType\SecondExample\bin\Debug\netcoreapp2.1\SecondExample.runtimeconfig.json
+C:\Users\yoryordanov\source\repos\InterfacesAndValueType\SecondExample\bin\Debug\netcoreapp2.1\SecondExample.runtimeconfig.dev.json
+C:\Users\yoryordanov\source\repos\InterfacesAndValueType\SecondExample\bin\Debug\netcoreapp2.1\SecondExample.dll
+C:\Users\yoryordanov\source\repos\InterfacesAndValueType\SecondExample\bin\Debug\netcoreapp2.1\SecondExample.pdb
+C:\Users\yoryordanov\source\repos\InterfacesAndValueType\SecondExample\obj\Debug\netcoreapp2.1\SecondExample.csprojAssemblyReference.cache
+C:\Users\yoryordanov\source\repos\InterfacesAndValueType\SecondExample\obj\Debug\netcoreapp2.1\SecondExample.csproj.CoreCompileInputs.cache
+C:\Users\yoryordanov\source\repos\InterfacesAndValueType\SecondExample\obj\Debug\netcoreapp2.1\SecondExample.AssemblyInfoInputs.cache
+C:\Users\yoryordanov\source\repos\InterfacesAndValueType\SecondExample\obj\Debug\netcoreapp2.1\SecondExample.AssemblyInfo.cs
+C:\Users\yoryordanov\source\repos\InterfacesAndValueType\SecondExample\obj\Debug\netcoreapp2.1\SecondExample.dll
+C:\Users\yoryordanov\source\repos\InterfacesAndValueType\SecondExample\obj\Debug\netcoreapp2.1\SecondExample.pdb
