@@ -1,6 +1,0 @@
-C:\Users\Jordan\Documents\GitHub\Data Structures\Linked-List-CSharp-Skeleton\Undo List\bin\Debug\Undo List.exe.config
-C:\Users\Jordan\Documents\GitHub\Data Structures\Linked-List-CSharp-Skeleton\Undo List\bin\Debug\Undo List.exe
-C:\Users\Jordan\Documents\GitHub\Data Structures\Linked-List-CSharp-Skeleton\Undo List\bin\Debug\Undo List.pdb
-C:\Users\Jordan\Documents\GitHub\Data Structures\Linked-List-CSharp-Skeleton\Undo List\obj\Debug\Undo List.csprojResolveAssemblyReference.cache
-C:\Users\Jordan\Documents\GitHub\Data Structures\Linked-List-CSharp-Skeleton\Undo List\obj\Debug\Undo List.exe
-C:\Users\Jordan\Documents\GitHub\Data Structures\Linked-List-CSharp-Skeleton\Undo List\obj\Debug\Undo List.pdb

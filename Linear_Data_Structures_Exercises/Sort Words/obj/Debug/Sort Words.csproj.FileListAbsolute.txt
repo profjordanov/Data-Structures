@@ -1,5 +1,0 @@
-C:\Users\Jordan\Documents\GitHub\Data Structures\Linear_Data_Structures_Exercises\Sort Words\bin\Debug\Sort Words.exe.config
-C:\Users\Jordan\Documents\GitHub\Data Structures\Linear_Data_Structures_Exercises\Sort Words\bin\Debug\Sort Words.exe
-C:\Users\Jordan\Documents\GitHub\Data Structures\Linear_Data_Structures_Exercises\Sort Words\bin\Debug\Sort Words.pdb
-C:\Users\Jordan\Documents\GitHub\Data Structures\Linear_Data_Structures_Exercises\Sort Words\obj\Debug\Sort Words.exe
-C:\Users\Jordan\Documents\GitHub\Data Structures\Linear_Data_Structures_Exercises\Sort Words\obj\Debug\Sort Words.pdb

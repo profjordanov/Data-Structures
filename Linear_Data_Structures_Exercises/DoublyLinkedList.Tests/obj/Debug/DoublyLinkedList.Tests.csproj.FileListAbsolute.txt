@@ -1,8 +1,0 @@
-C:\Users\Jordan\Documents\GitHub\Data Structures\Linear_Data_Structures_Exercises\DoublyLinkedList.Tests\bin\Debug\DoublyLinkedList.Tests.dll
-C:\Users\Jordan\Documents\GitHub\Data Structures\Linear_Data_Structures_Exercises\DoublyLinkedList.Tests\bin\Debug\DoublyLinkedList.Tests.pdb
-C:\Users\Jordan\Documents\GitHub\Data Structures\Linear_Data_Structures_Exercises\DoublyLinkedList.Tests\bin\Debug\DoublyLinkedList.exe
-C:\Users\Jordan\Documents\GitHub\Data Structures\Linear_Data_Structures_Exercises\DoublyLinkedList.Tests\bin\Debug\Microsoft.VisualStudio.QualityTools.UnitTestFramework.dll
-C:\Users\Jordan\Documents\GitHub\Data Structures\Linear_Data_Structures_Exercises\DoublyLinkedList.Tests\bin\Debug\DoublyLinkedList.pdb
-C:\Users\Jordan\Documents\GitHub\Data Structures\Linear_Data_Structures_Exercises\DoublyLinkedList.Tests\obj\Debug\DoublyLinkedList.Tests.csprojResolveAssemblyReference.cache
-C:\Users\Jordan\Documents\GitHub\Data Structures\Linear_Data_Structures_Exercises\DoublyLinkedList.Tests\obj\Debug\DoublyLinkedList.Tests.dll
-C:\Users\Jordan\Documents\GitHub\Data Structures\Linear_Data_Structures_Exercises\DoublyLinkedList.Tests\obj\Debug\DoublyLinkedList.Tests.pdb

@@ -1,5 +1,0 @@
-C:\Users\Jordan\Documents\GitHub\Data Structures\Linear_Data_Structures_Exercises\Sum and Average\bin\Debug\Sum and Average.exe.config
-C:\Users\Jordan\Documents\GitHub\Data Structures\Linear_Data_Structures_Exercises\Sum and Average\bin\Debug\Sum and Average.exe
-C:\Users\Jordan\Documents\GitHub\Data Structures\Linear_Data_Structures_Exercises\Sum and Average\bin\Debug\Sum and Average.pdb
-C:\Users\Jordan\Documents\GitHub\Data Structures\Linear_Data_Structures_Exercises\Sum and Average\obj\Debug\Sum and Average.exe
-C:\Users\Jordan\Documents\GitHub\Data Structures\Linear_Data_Structures_Exercises\Sum and Average\obj\Debug\Sum and Average.pdb

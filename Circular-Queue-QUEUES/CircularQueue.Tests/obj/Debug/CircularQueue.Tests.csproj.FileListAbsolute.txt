@@ -1,8 +1,0 @@
-C:\Users\Jordan\Documents\GitHub\Data Structures\Circular-Queue-QUEUES\CircularQueue.Tests\bin\Debug\CircularQueue.Tests.dll
-C:\Users\Jordan\Documents\GitHub\Data Structures\Circular-Queue-QUEUES\CircularQueue.Tests\bin\Debug\CircularQueue.Tests.pdb
-C:\Users\Jordan\Documents\GitHub\Data Structures\Circular-Queue-QUEUES\CircularQueue.Tests\bin\Debug\CircularQueue.exe
-C:\Users\Jordan\Documents\GitHub\Data Structures\Circular-Queue-QUEUES\CircularQueue.Tests\bin\Debug\Microsoft.VisualStudio.QualityTools.UnitTestFramework.dll
-C:\Users\Jordan\Documents\GitHub\Data Structures\Circular-Queue-QUEUES\CircularQueue.Tests\bin\Debug\CircularQueue.pdb
-C:\Users\Jordan\Documents\GitHub\Data Structures\Circular-Queue-QUEUES\CircularQueue.Tests\obj\Debug\CircularQueue.Tests.csprojResolveAssemblyReference.cache
-C:\Users\Jordan\Documents\GitHub\Data Structures\Circular-Queue-QUEUES\CircularQueue.Tests\obj\Debug\CircularQueue.Tests.dll
-C:\Users\Jordan\Documents\GitHub\Data Structures\Circular-Queue-QUEUES\CircularQueue.Tests\obj\Debug\CircularQueue.Tests.pdb

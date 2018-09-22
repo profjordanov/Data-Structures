@@ -1,6 +1,0 @@
-C:\Users\Jordan\Documents\GitHub\Data Structures\LinearDataStructures_STACKSnQUEUES\ArrayStack\bin\Debug\ArrayStack.exe.config
-C:\Users\Jordan\Documents\GitHub\Data Structures\LinearDataStructures_STACKSnQUEUES\ArrayStack\bin\Debug\ArrayStack.exe
-C:\Users\Jordan\Documents\GitHub\Data Structures\LinearDataStructures_STACKSnQUEUES\ArrayStack\bin\Debug\ArrayStack.pdb
-C:\Users\Jordan\Documents\GitHub\Data Structures\LinearDataStructures_STACKSnQUEUES\ArrayStack\obj\Debug\ArrayStack.csprojResolveAssemblyReference.cache
-C:\Users\Jordan\Documents\GitHub\Data Structures\LinearDataStructures_STACKSnQUEUES\ArrayStack\obj\Debug\ArrayStack.exe
-C:\Users\Jordan\Documents\GitHub\Data Structures\LinearDataStructures_STACKSnQUEUES\ArrayStack\obj\Debug\ArrayStack.pdb

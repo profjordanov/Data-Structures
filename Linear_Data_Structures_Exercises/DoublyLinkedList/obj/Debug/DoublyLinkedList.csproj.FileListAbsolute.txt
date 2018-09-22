@@ -1,5 +1,0 @@
-C:\Users\Jordan\Documents\GitHub\Data Structures\Linear_Data_Structures_Exercises\DoublyLinkedList\bin\Debug\DoublyLinkedList.exe
-C:\Users\Jordan\Documents\GitHub\Data Structures\Linear_Data_Structures_Exercises\DoublyLinkedList\bin\Debug\DoublyLinkedList.pdb
-C:\Users\Jordan\Documents\GitHub\Data Structures\Linear_Data_Structures_Exercises\DoublyLinkedList\obj\Debug\DoublyLinkedList.csprojResolveAssemblyReference.cache
-C:\Users\Jordan\Documents\GitHub\Data Structures\Linear_Data_Structures_Exercises\DoublyLinkedList\obj\Debug\DoublyLinkedList.exe
-C:\Users\Jordan\Documents\GitHub\Data Structures\Linear_Data_Structures_Exercises\DoublyLinkedList\obj\Debug\DoublyLinkedList.pdb

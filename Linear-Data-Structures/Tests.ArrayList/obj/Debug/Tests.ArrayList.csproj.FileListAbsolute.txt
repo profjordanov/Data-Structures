@@ -1,8 +1,0 @@
-C:\Users\Jordan\Documents\GitHub\Data Structures\Linear-Data-Structures\Tests.ArrayList\bin\Debug\Tests.ArrayList.dll
-C:\Users\Jordan\Documents\GitHub\Data Structures\Linear-Data-Structures\Tests.ArrayList\bin\Debug\Tests.ArrayList.pdb
-C:\Users\Jordan\Documents\GitHub\Data Structures\Linear-Data-Structures\Tests.ArrayList\bin\Debug\Lists.exe
-C:\Users\Jordan\Documents\GitHub\Data Structures\Linear-Data-Structures\Tests.ArrayList\bin\Debug\Microsoft.VisualStudio.QualityTools.UnitTestFramework.dll
-C:\Users\Jordan\Documents\GitHub\Data Structures\Linear-Data-Structures\Tests.ArrayList\bin\Debug\Lists.pdb
-C:\Users\Jordan\Documents\GitHub\Data Structures\Linear-Data-Structures\Tests.ArrayList\obj\Debug\Tests.ArrayList.csprojResolveAssemblyReference.cache
-C:\Users\Jordan\Documents\GitHub\Data Structures\Linear-Data-Structures\Tests.ArrayList\obj\Debug\Tests.ArrayList.dll
-C:\Users\Jordan\Documents\GitHub\Data Structures\Linear-Data-Structures\Tests.ArrayList\obj\Debug\Tests.ArrayList.pdb
