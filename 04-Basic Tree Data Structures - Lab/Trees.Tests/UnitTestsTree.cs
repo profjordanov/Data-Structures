@@ -57,7 +57,7 @@ namespace Trees.Tests
             var output = Encoding.UTF8.GetString(outputStream.ToArray());
 
             // Assert
-            var expectedOutput = "7\n  19\n    1\n    12\n    31\n  21\n  14\n    23\n    6\n";
+            const string expectedOutput = "7\n  19\n    1\n    12\n    31\n  21\n  14\n    23\n    6\n";
             output = output.Replace("\r\n", "\n");
             Assert.AreEqual(expectedOutput, output);
         }
@@ -70,7 +70,7 @@ namespace Trees.Tests
                 new Tree<int>(7);
 
             // Act
-            var actual = new List<int>(tree.OrderDFS());
+            var actual = new List<int>(tree.OrderDfs());
 
             // Assert
             var expectedOutput = new List<int>() { 7 };
@@ -93,7 +93,7 @@ namespace Trees.Tests
                         new Tree<int>(6)));
 
             // Act
-            var actual = new List<int>(tree.OrderDFS());
+            var actual = new List<int>(tree.OrderDfs());
 
             // Assert
             var expectedOutput = new List<int>() { 1, 12, 31, 19, 21, 23, 6, 14, 7 };
@@ -108,7 +108,7 @@ namespace Trees.Tests
                 new Tree<int>(7);
 
             // Act
-            var actual = new List<int>(tree.OrderBFS());
+            var actual = new List<int>(tree.OrderBfs());
 
             // Assert
             var expectedOutput = new List<int>() { 7 };
@@ -131,7 +131,7 @@ namespace Trees.Tests
                         new Tree<int>(6)));
 
             // Act
-            var actual = new List<int>(tree.OrderBFS());
+            var actual = new List<int>(tree.OrderBfs());
 
             // Assert
             var expectedOutput = new List<int>() { 7, 19, 21, 14, 1, 12, 31, 23, 6 };
