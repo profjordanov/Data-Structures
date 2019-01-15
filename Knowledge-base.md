@@ -30,7 +30,9 @@
 - Copying occurs at log(n)  n = 109, only ~30 copies
 
 # Linked Lists
-  Chain of Nodes
+- Linked Lists are a chain of Nodes
+- Add and Remove – O(1), if we have a pointer to the location
+
 ### Node
 - Building block of many data structures
 - A basic Node has a value and a pointer to the next node
