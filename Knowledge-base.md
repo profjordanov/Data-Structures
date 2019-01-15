@@ -203,4 +203,15 @@ Example : Splits given array into batches
   - Graphs: directed / undirected, weighted, etc.
   - Networks: graphs with particular attributes
 
-	
+## Recursive Tree Definition
+- A single node is a tree
+- Nodes have zero or multiple children that are also trees
+
+  ```csharp
+	public class Tree<T>
+	{
+	  private T value;
+	  private IList<Tree<T>> children;
+	  …
+	}
+  ```
