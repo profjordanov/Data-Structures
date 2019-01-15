@@ -87,3 +87,26 @@
 - Pop() – removes and returns the top element from the stack
 - Peek() – returns the top element without removing it
 - Count – returns the number of elements in the stack
+- Clear() – removes all elements
+- Contains(T) – checks whether given element is in the stack
+- ToArray() – converts the stack to an array
+- TrimExcess() – trim the capacity to the actual space needed
+
+Simple Example:
+  ```csharp
+  static void Main()
+  {
+      Stack<string> stack = new Stack<string>();
+      stack.Push("1. Ivan");
+      stack.Push("2. Nikolay");
+      stack.Push("3. Maria");
+      Console.WriteLine("Top = {0}", stack.Peek());
+      while (stack.Count > 0)
+      {
+          string personName = stack.Pop();
+          Console.WriteLine(personName);
+      }
+  }
+
+
+  ```
