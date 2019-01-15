@@ -66,3 +66,11 @@
 - Elements removed (pop) from the "top"
 
 ![alt text](http://bluegalaxy.info/codewalk/wp-content/uploads/2018/08/stack.jpg)
+
+## Static Stack
+
+- Has limited (fixed) capacity
+- The current index (top) moves left / right with each pop / push
+- Usually doubles its size (grows) when the capacity is filled
+
+![alt text](http://www.introprogramming.info/wp-content/uploads/2013/07/clip_image0131.png)
