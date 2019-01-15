@@ -1,4 +1,5 @@
 # Array Data Structures
+
 - Ordered
 - Very lightweight
 - Has a fixed size
@@ -19,3 +20,7 @@
 - Memory after the array may be occupied
 - If we want to resize the array we have to make a copy
 - Array Copy – O(n)
+
+# List Data Structure
+
+- Has a variable size
