@@ -107,6 +107,11 @@ Simple Example:
           Console.WriteLine(personName);
       }
   }
-
-
   ```
+
+# Queues
+- FIFO (First In First Out) structure
+- Elements inserted at the tail (enqueue)
+- Elements removed from the head (dequeue)
+
+![alt text](https://netmatze.files.wordpress.com/2014/08/queue.png)
