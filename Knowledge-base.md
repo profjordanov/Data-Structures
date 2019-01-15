@@ -193,3 +193,9 @@ Example : Splits given array into batches
 		} }
   }
   ```
+  
+# Tree-like Data Structures
+
+- Branched recursive data structures
+- Each node connected to other nodes
+
