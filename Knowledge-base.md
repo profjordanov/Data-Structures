@@ -12,3 +12,7 @@
   int[] array = { 2, 4, 1, 3, 5 };
   ```
   Total: 5 * 4 bytes
+
+- Uses total of array pointer + (N * element/pointer size)
+- Array Address + (Element Index * Size) = Element Address
+- Array Element Lookup – O(1)
