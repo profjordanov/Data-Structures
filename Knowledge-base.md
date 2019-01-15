@@ -198,4 +198,9 @@ Example : Splits given array into batches
 
 - Branched recursive data structures
 - Each node connected to other nodes
+- Examples of tree-like structures
+  - Trees: binary, balanced, ordered, etc.
+  - Graphs: directed / undirected, weighted, etc.
+  - Networks: graphs with particular attributes
 
+	
