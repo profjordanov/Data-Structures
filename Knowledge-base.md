@@ -108,6 +108,14 @@ Simple Example:
       }
   }
   ```
+  
+  ### Real-World Example
+  - Undo operations 
+    - Browser history
+    - Chess game progress
+  - Math expression evaluation
+  - Implementation of function (method) calls
+  - Tree-like structures traversal (DFS algorithm) 
 
 # Queues
 - FIFO (First In First Out) structure
