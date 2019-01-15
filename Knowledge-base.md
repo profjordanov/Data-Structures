@@ -11,4 +11,4 @@
   ```csharp
   int[] array = { 2, 4, 1, 3, 5 };
   ```
-  
+  Total: 5 * 4 bytes
