@@ -58,3 +58,11 @@
   }
 
   ```
+
+# Stacks
+
+- LIFO (Last In First Out) structure 
+- Elements inserted (push) at the "top"
+- Elements removed (pop) from the "top"
+
+![alt text](http://bluegalaxy.info/codewalk/wp-content/uploads/2018/08/stack.jpg)
