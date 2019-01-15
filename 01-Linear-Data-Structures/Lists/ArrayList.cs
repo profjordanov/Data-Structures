@@ -2,6 +2,10 @@
 
 namespace Lists
 {
+	/// <summary>
+	/// Implements resizable array.
+	/// </summary>
+	/// <typeparam name="T"></typeparam>
 	public class ArrayList<T>
 	{
 		private const int InitialCapacity = 2;
@@ -38,6 +42,10 @@ namespace Lists
 			}
 		}
 
+		/// <summary>
+		/// Adds item to the collection.
+		/// </summary>
+		/// <param name="item"></param>
 		public void Add(T item)
 		{
 			if (Count == _items.Length)
@@ -48,18 +56,11 @@ namespace Lists
 			_items[Count++] = item;
 		}
 
-		private void Resize()
-		{
-			var copy = new T[_items.Length * 2];
-
-			Array.Copy(
-				sourceArray: _items,
-				destinationArray: copy,
-				length: Count);
-
-			_items = copy;
-		}
-
+		/// <summary>
+		/// Removes element from the collection by its index.
+		/// </summary>
+		/// <param name="index"></param>
+		/// <returns>Removed element.</returns>
 		public T RemoveAt(int index)
 		{
 			if (index < 0 || index >= Count)
@@ -78,7 +79,17 @@ namespace Lists
 
 			return element;
 		}
+		private void Resize()
+		{
+			var copy = new T[ _items.Length * 2 ];
 
+			Array.Copy(
+				sourceArray: _items,
+				destinationArray: copy,
+				length: Count);
+
+			_items = copy;
+		}
 		private void Shrink()
 		{
 			var copy = new T[_items.Length / 2];
@@ -88,7 +99,6 @@ namespace Lists
 				length: Count);
 			_items = copy;
 		}
-
 		private void Shift(int index)
 		{
 			for (var i = index; i < Count; i++)
