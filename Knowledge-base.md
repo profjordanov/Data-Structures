@@ -74,3 +74,12 @@
 - Usually doubles its size (grows) when the capacity is filled
 
 ![alt text](http://www.introprogramming.info/wp-content/uploads/2013/07/clip_image0131.png)
+
+## Generic Stack Class in .NET
+
+- Implemented using an array
+- Elements are of the same type T
+- T can be any type, e.g. Stack<int> / Stack<Customer>
+- Size is dynamically increased as needed (auto-grow)
+
+### Basic Functionality
