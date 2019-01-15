@@ -154,3 +154,40 @@ Simple Example:
   - Printer document queue
   - Server requests queue
 - Tree-like structures traversal (BFS algorithm) 
+
+  ```csharp
+		private static IEnumerable<Document[]> SplitDocumentsIntoBatches(Document[] documents, int batchSize)
+		{
+			var batchesCollection = new List<Document[]>();
+			var batchQueue = new Queue<Document[]>(CommonExtensions.SplitArrayIntoBatches(documents, batchSize));
+
+			// while the queue is not empty
+			while(batchQueue.TryPeek(out var documentsToProcess))
+			{
+				// serialize the queue
+				var documentsJson = JsonConvert.SerializeObject(documentsToProcess, Formatting.Indented);
+				var documentsJsonBytes = Encoding.ASCII.GetBytes(documentsJson);
+				// check if serialized text is larger than acceptable batch size
+				if(documentsJsonBytes.Length > AcceptableBatchSize)
+				{
+					// split it into mulitple batches and enqueue them again
+					var subDocumentBatches = CommonExtensions.SplitArrayIntoBatches(documentsToProcess, documentsToProcess.Length / 2)
+						.ToList();
+
+					foreach(var subPayslipBatch in subPayslipBatches)
+					{
+						batchQueue.Enqueue(subPayslipBatch);
+					}
+				}
+				else
+				{
+					batchesCollection.Add(payslipsToProcess);
+				}
+
+				batchQueue.Dequeue();
+			}
+
+			return batchesCollection;
+		} }
+  }
+  ```
