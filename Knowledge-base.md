@@ -9,4 +9,6 @@
   
   ```csharp
   int[] array = { 2, 4, 1, 3, 5 };
-```
+  ```
+  
+Int32 uses 4 bytes
