@@ -115,3 +115,8 @@ Simple Example:
 - Elements removed from the head (dequeue)
 
 ![alt text](https://netmatze.files.wordpress.com/2014/08/queue.png)
+
+## Linked Queue
+- Dynamic (pointer-based) implementation
+  - Each node has 2 fields: value and next
+  - Dynamically create and delete objects
