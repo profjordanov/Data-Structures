@@ -24,3 +24,7 @@
 # List Data Structure
 
 - Has a variable size
+- Implemented using an array
+- Dynamic Arrays (Lists) – Add O(1)
+- Doubles its capacity when needed
+- Copying occurs at log(n)  n = 109, only ~30 copies
