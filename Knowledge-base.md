@@ -16,3 +16,6 @@
 - Uses total of array pointer + (N * element/pointer size)
 - Array Address + (Element Index * Size) = Element Address
 - Array Element Lookup – O(1)
+- Memory after the array may be occupied
+- If we want to resize the array we have to make a copy
+- Array Copy – O(n)
