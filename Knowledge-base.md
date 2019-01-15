@@ -83,3 +83,7 @@
 - Size is dynamically increased as needed (auto-grow)
 
 ### Basic Functionality
+- Push(T) – inserts elements to the stack
+- Pop() – removes and returns the top element from the stack
+- Peek() – returns the top element without removing it
+- Count – returns the number of elements in the stack
