@@ -155,6 +155,8 @@ Simple Example:
   - Server requests queue
 - Tree-like structures traversal (BFS algorithm) 
 
+Example : Splits given array into batches
+
   ```csharp
 		private static IEnumerable<Document[]> SplitDocumentsIntoBatches(Document[] documents, int batchSize)
 		{
