@@ -1,29 +1,100 @@
 ﻿using System;
 
-public class ArrayList<T>
+namespace Lists
 {
-    public int Count { get; set; }
+	public class ArrayList<T>
+	{
+		private const int InitialCapacity = 2;
 
-    public T this[int index]
-    {
-        get
-        {
-            throw new NotImplementedException();
-        }
+		private T[] _items;
 
-        set
-        {
-            throw new NotImplementedException();
-        }
-    }
+		public ArrayList()
+		{
+			_items = new T[InitialCapacity];
+		}
 
-    public void Add(T item)
-    {
-        throw new NotImplementedException();
-    }
+		public int Count { get; private set; }
 
-    public T RemoveAt(int index)
-    {
-        throw new NotImplementedException();
-    }
+		public T this[int index]
+		{
+			get
+			{
+				if (index < 0 || index >= Count)
+				{
+					throw new ArgumentOutOfRangeException();
+				}
+
+				return _items[index];
+			}
+
+			set
+			{
+				if(index < 0 || index >= Count)
+				{
+					throw new ArgumentOutOfRangeException();
+				}
+
+				_items[index] = value;
+			}
+		}
+
+		public void Add(T item)
+		{
+			if (Count == _items.Length)
+			{
+				Resize();
+			}
+
+			_items[Count++] = item;
+		}
+
+		private void Resize()
+		{
+			var copy = new T[_items.Length * 2];
+
+			Array.Copy(
+				sourceArray: _items,
+				destinationArray: copy,
+				length: Count);
+
+			_items = copy;
+		}
+
+		public T RemoveAt(int index)
+		{
+			if (index < 0 || index >= Count)
+			{
+				throw new ArgumentOutOfRangeException();
+			}
+
+			var element = _items[index];
+			_items[index] = default(T);
+			Shift(index);
+			Count--;
+			if (Count <= _items.Length / 4)
+			{
+				Shrink();
+			}
+
+			return element;
+		}
+
+		private void Shrink()
+		{
+			var copy = new T[_items.Length / 2];
+			Array.Copy(
+				sourceArray: _items,
+				destinationArray: copy,
+				length: Count);
+			_items = copy;
+		}
+
+		private void Shift(int index)
+		{
+			for (var i = index; i < Count; i++)
+			{
+				_items[i] = _items[i + 1];
+			}
+		}
+	}
 }
