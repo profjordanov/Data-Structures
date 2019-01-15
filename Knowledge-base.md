@@ -147,3 +147,10 @@ Simple Example:
 - Dequeue() – removes and returns the head element
 - Peek() – returns the head element without removing it
 - Other methods similar to the Stack<T> methods e.g. ToArray(), Contains(), etc
+  
+### Real-World Example  
+- Operation system process scheduling
+- Resource sharing
+  - Printer document queue
+  - Server requests queue
+- Tree-like structures traversal (BFS algorithm) 
