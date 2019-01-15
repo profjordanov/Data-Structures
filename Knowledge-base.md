@@ -30,7 +30,7 @@
 - Copying occurs at log(n)  n = 109, only ~30 copies
 
 # Linked Lists
-## Chain of Nodes
+  Chain of Nodes
 ### Node
 - Building block of many data structures
 - A basic Node has a value and a pointer to the next node
@@ -41,4 +41,18 @@
 
   head.Next(next);
   ```
+  Simple example of class `Node`
   
+  ```csharp
+  public class Node<T>
+  {
+    public Node(T value)
+    {
+      this.Value = value;
+    }
+  
+    public T Value { get; set; }
+    public Node<T> Next { get; set; }
+  }
+
+  ```
