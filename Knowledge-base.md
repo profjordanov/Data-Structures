@@ -120,3 +120,22 @@ Simple Example:
 - Dynamic (pointer-based) implementation
   - Each node has 2 fields: value and next
   - Dynamically create and delete objects
+  
+## Static (Circular) Queue
+- Static (array-based) implementation
+  - Implemented as a "circular array"
+  - Has limited (fixed) capacity (doubled when filled)
+  - Has head and tail indices, pointing to the head and the tail of the circular queue
+
+## Generic Queue Class in .NET
+
+- Queue<T> implements the queue data structure using a circular resizable array
+  - Elements are of the same type T
+  - T can be any type, e.g. / Queue<int> / Queue<DateTime>
+  - Size is dynamically increased as needed
+
+### Basic Functionality
+- Enqueue(T) – appends an element to the end of the queue
+- Dequeue() – removes and returns the head element
+- Peek() – returns the head element without removing it
+- Other methods similar to the Stack<T> methods e.g. ToArray(), Contains(), etc
