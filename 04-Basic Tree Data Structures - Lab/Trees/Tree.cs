@@ -70,9 +70,9 @@ namespace Trees
         /// <returns>Result list.</returns>
         public IEnumerable<T> OrderBfs()
         {
-            //collection for the algorithm 
-            var result = new List<T>();
             //collection for the result
+            var result = new List<T>();
+            //collection for the algorithm 
             var queue = new Queue<Tree<T>>();
             //enqueue the root node 
             queue.Enqueue(this);
@@ -83,7 +83,7 @@ namespace Trees
                 var current = queue.Dequeue();
                 //Adds the node to the result list
                 result.Add(current.Value);
-                //adds all of current node children to the end of the queue
+                //adds all of current node children to the queue
                 foreach (var child in current.Children)
                 {
                     queue.Enqueue(child);
