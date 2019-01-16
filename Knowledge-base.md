@@ -20,6 +20,8 @@
 - Memory after the array may be occupied
 - If we want to resize the array we have to make a copy
 - Array Copy – O(n)
+- Attributes: ComVisibleAttribute & SerializableAttribute
+- Implements: ICollection, IEnumerable. IList. IStructuralComparable. IStructuralEquatable. ICloneable
 
 # List Data Structure
 
