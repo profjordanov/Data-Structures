@@ -93,6 +93,7 @@
 - TrimExcess() – trim the capacity to the actual space needed
 
 Simple Example:
+
   ```csharp
   static void Main()
   {
