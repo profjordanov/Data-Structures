@@ -92,6 +92,15 @@
 - ToArray() – converts the stack to an array
 - TrimExcess() – trim the capacity to the actual space needed
 
+  ```csharp
+     // A simple stack of objects.  Internally it is implemented as an array,
+    // so Push can be O(n).  Pop is O(1).
+    [System.Runtime.InteropServices.ComVisible(false)]
+    public class Stack<T> : IEnumerable<T>, 
+        System.Collections.ICollection,
+        IReadOnlyCollection<T> 
+  ```
+  
 Simple Example:
 
   ```csharp
