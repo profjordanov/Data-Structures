@@ -141,7 +141,19 @@ Simple Example:
   - Elements are of the same type T
   - T can be any type, e.g. / Queue<int> / Queue<DateTime>
   - Size is dynamically increased as needed
-
+  ```csharp
+	    // A simple Queue of generic objects.  Internally it is implemented as a 
+    // circular buffer, so Enqueue can be O(n).  Dequeue is O(1).
+    [DebuggerTypeProxy(typeof(System_QueueDebugView<>))]
+    [DebuggerDisplay("Count = {Count}")]    
+#if !SILVERLIGHT
+    [Serializable()]        
+#endif
+    [System.Runtime.InteropServices.ComVisible(false)]
+    public class Queue<T> : IEnumerable<T>,
+        System.Collections.ICollection,
+        IReadOnlyCollection<T> 
+  ```
 ### Basic Functionality
 - Enqueue(T) – appends an element to the end of the queue
 - Dequeue() – removes and returns the head element
