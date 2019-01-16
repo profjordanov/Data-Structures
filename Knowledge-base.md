@@ -141,6 +141,7 @@ Simple Example:
   - Elements are of the same type T
   - T can be any type, e.g. / Queue<int> / Queue<DateTime>
   - Size is dynamically increased as needed
+	
   ```csharp
 	    // A simple Queue of generic objects.  Internally it is implemented as a 
     // circular buffer, so Enqueue can be O(n).  Dequeue is O(1).
