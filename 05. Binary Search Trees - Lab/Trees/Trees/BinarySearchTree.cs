@@ -15,6 +15,11 @@ namespace Trees
     {
         private Node<T> _root;
 
+        private BinarySearchTree(Node<T> node)
+        {
+            throw new NotImplementedException();
+        }
+
         /// <summary>
         /// Inserts {T} in <see cref="BinarySearchTree{T}"/>
         /// </summary>
@@ -96,9 +101,15 @@ namespace Trees
             throw new NotImplementedException();
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="item"></param>
+        /// <returns></returns>
         public BinarySearchTree<T> Search(T item)
         {
-            throw new NotImplementedException();
+            Node<T> current = FindNodeByValue(item);
+            return current == null ? null : new BinarySearchTree<T>(current);
         }
 
         public IEnumerable<T> Range(T startRange, T endRange)
@@ -123,6 +134,29 @@ namespace Trees
             EachInOrder(node.Left, action);
             action(node.Value);
             EachInOrder(node.Right, action);
+        }
+
+        private Node<T> FindNodeByValue(T item)
+        {
+            Node<T> current = _root;
+            // finds the element
+            while (current != null)
+            {
+                if (item.CompareTo(current.Value) > 0)
+                {
+                    current = current.Right;
+                }
+                else if (item.CompareTo(current.Value) < 0)
+                {
+                    current = current.Left;
+                }
+                else
+                {
+                    break;
+                }
+            }
+
+            return current;
         }
     }
 

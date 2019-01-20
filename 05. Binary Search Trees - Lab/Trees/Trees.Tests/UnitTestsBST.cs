@@ -19,7 +19,7 @@ namespace Trees.Tests
             bst.EachInOrder(nodes.Add);
 
             // Assert
-            int[] expectedNodes = new int[] { 1 };
+            int[] expectedNodes = { 1 };
             CollectionAssert.AreEqual(expectedNodes, nodes);
         }
 
@@ -37,7 +37,7 @@ namespace Trees.Tests
             bst.EachInOrder(nodes.Add);
 
             // Assert
-            int[] expectedNodes = new int[] { 1, 2, 3 };
+            int[] expectedNodes = { 1, 2, 3 };
             CollectionAssert.AreEqual(expectedNodes, nodes);
         }
 
