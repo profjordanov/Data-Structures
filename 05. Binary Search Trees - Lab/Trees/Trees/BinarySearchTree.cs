@@ -16,21 +16,26 @@ namespace Trees
         private Node<T> _root;
 
         /// <summary>
-        /// 
+        /// Inserts {T} in <see cref="BinarySearchTree{T}"/>
         /// </summary>
         /// <param name="value"></param>
         public void Insert(T value)
         {
+            // check if there are any elements in the tree
             if (_root == null)
             {
+                // set the root
                 _root = new Node<T>(value);
                 return;
             }
 
+            // traverse the tree, by holding reference
+            // to both current node and its parent
             Node<T> parent = null;
             Node<T> current = _root;
             while (current != null)
             {
+                // finds insertion node
                 parent = current;
                 if (current.Value.CompareTo(value) > 0)
                 {
@@ -46,6 +51,7 @@ namespace Trees
                 }
             }
 
+            // inserts the new node
             Node<T> newNode = new Node<T>(value);
             if (value.CompareTo(parent.Value) < 0)
             {
