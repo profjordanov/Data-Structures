@@ -7,7 +7,7 @@ namespace Trees
     /// It has a value and a pointers to the left and right sub-tree's nodes.
     /// </summary>
     /// <typeparam name="T"></typeparam>
-    internal class Node<T>
+    public class Node<T>
         where T : IComparable<T>
     {
         public Node(T value)

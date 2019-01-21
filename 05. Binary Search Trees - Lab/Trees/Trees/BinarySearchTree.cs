@@ -15,23 +15,24 @@ namespace Trees
     {
         private Node<T> _root;
 
-        private BinarySearchTree(Node<T> node)
+        public BinarySearchTree()
         {
-            throw new NotImplementedException();
         }
+
+        public BinarySearchTree(Node<T> root) => Copy(root);
 
         /// <summary>
         /// Inserts {T} in <see cref="BinarySearchTree{T}"/>
         /// </summary>
         /// <param name="value"></param>
-        public void Insert(T value)
+        public Node<T> Insert(T value)
         {
             // check if there are any elements in the tree
             if (_root == null)
             {
                 // set the root
                 _root = new Node<T>(value);
-                return;
+                return _root;
             }
 
             // traverse the tree, by holding reference
@@ -52,7 +53,7 @@ namespace Trees
                 }
                 else
                 {
-                    return;
+                    return current;
                 }
             }
 
@@ -66,6 +67,8 @@ namespace Trees
             {
                 parent.Right = newNode;
             }
+
+            return newNode;
         }
 
         /// <summary>
@@ -76,33 +79,44 @@ namespace Trees
         /// <param name="value"></param>
         public bool Contains(T value)
         {
-            Node<T> current = _root;
-            while (current != null)
-            {
-                if (value.CompareTo(current.Value) < 0)
-                {
-                    current = current.Left;
-                }
-                else if (value.CompareTo(current.Value) > 0)
-                {
-                    current = current.Right;
-                }
-                else
-                {
-                    break;
-                }
-            }
-
+            Node<T> current = FindNodeByValue(value);
             return current != null;
         }
 
+        /// <summary>
+        /// Deletes node with minimum value.
+        /// </summary>
         public void DeleteMin()
         {
-            throw new NotImplementedException();
+            // Check if the root is null. 
+            if (_root == null)
+            {
+                return;
+            }
+
+            // finds the parent of the min element
+            Node<T> parent = null;
+            Node<T> min = _root;
+
+            while (min.Left != null)
+            {
+                parent = min;
+                min = min.Left;
+            }
+
+            // sets parent left child to be the min's right child.
+            if (parent == null)
+            {
+                _root = min.Right;
+            }
+            else
+            {
+                parent.Left = min.Right;
+            }
         }
 
         /// <summary>
-        /// 
+        /// is very similar to <see cref="Contains"/>. 
         /// </summary>
         /// <param name="item"></param>
         /// <returns></returns>
@@ -112,9 +126,51 @@ namespace Trees
             return current == null ? null : new BinarySearchTree<T>(current);
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="startRange"></param>
+        /// <param name="endRange"></param>
+        /// <returns></returns>
         public IEnumerable<T> Range(T startRange, T endRange)
         {
-            throw new NotImplementedException();
+            Queue<T> queue = new Queue<T>();
+            Range(_root, queue, startRange, endRange);
+            return queue;
+        }
+
+        private void Range(Node<T> node, Queue<T> queue, T startRange, T endRange)
+        {
+            // bottom of the recursion
+            if (node == null)
+            {
+                return;
+            }
+
+            //finds if the node is in the lower and higher range borders
+            var nodeInLowerRange = startRange.CompareTo(node.Value);
+            var nodeInUpperRange = endRange.CompareTo(node.Value);
+
+            // in-order traversal for the items that are in the range
+            // node value is bigger than the lower range
+            if (nodeInLowerRange < 0)
+            {
+                // recursively goes to the left
+                Range(node.Left, queue, startRange, endRange);
+            }
+
+            //If the element is between the recursive calls, adds it to the queue
+            if (nodeInLowerRange <= 0 && nodeInUpperRange >= 0)
+            {
+                queue.Enqueue(node.Value);
+            }
+
+            // node value is smaller than the higher range border
+            if (nodeInUpperRange > 0)
+            {
+                // go to the right
+                Range(node.Right, queue, startRange, endRange);
+            }
         }
 
         /// <summary>
@@ -123,6 +179,23 @@ namespace Trees
         /// <param name="action"></param>
         public void EachInOrder(Action<T> action) =>
             EachInOrder(_root, action);
+
+        /// <summary>
+        /// Recursively copy the elements in exactly the same way in
+        /// which they exist in the parent tree (Pre-Order traversal):
+        /// </summary>
+        /// <param name="node"></param>
+        private void Copy(Node<T> node)
+        {
+            if (node == null)
+            {
+                return;;
+            }
+
+            Insert(node.Value);
+            Copy(node.Left);
+            Copy(node.Right);
+        }
 
         private static void EachInOrder(Node<T> node, Action<T> action)
         {
@@ -158,6 +231,7 @@ namespace Trees
 
             return current;
         }
+
     }
 
     public class Launcher
