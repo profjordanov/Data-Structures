@@ -12,7 +12,7 @@ namespace BinaryHeap
 
         public BinaryHeap()
         {
-            // TODO
+            _heap = new List<T>();
         }
 
         /// <summary>
@@ -21,14 +21,14 @@ namespace BinaryHeap
         public int Count => _heap.Count;
 
         /// <summary>
-        /// Adds an element.
+        /// Adds an element at the end and then bubble it up to its correct position.
         /// Time complexity is O(logN).
         /// </summary>
         /// <param name="item"></param>
         public void Insert(T item)
         {
             _heap.Add(item);
-
+            HeapifyUp(_heap.Count - 1);
         }
 
         /// <summary>
@@ -53,15 +53,31 @@ namespace BinaryHeap
             throw new NotImplementedException();
         }
 
+        /// <summary>
+        /// Bubble up the element towards the top of the pile.
+        /// </summary>
+        /// <param name="index">Element index</param>
         private void HeapifyUp(int index)
         {
-            while (true)
+            //While the index is greater than 0 (the element has a parent)
+            //and is greater than its parent, swap child with parent. 
+            while (index > 0 && IsLess(Parent(index), index))
             {
-                
+                Swap(index, Parent(index));
+                index = Parent(index);
             }
         }
 
         private bool IsLess(int other, int index) =>
             _heap[other].CompareTo(_heap[index]) < 0;
+
+        private static int Parent(int index) => (index - 1) / 2;
+
+        private void Swap(int index, int other)
+        {
+            T temp = _heap[index];
+            _heap[index] = _heap[other];
+            _heap[other] = temp;
+        }
     }
 }
