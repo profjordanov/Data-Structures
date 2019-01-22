@@ -1,9 +1,12 @@
 ﻿using System;
 
-public static class Heap<T> where T : IComparable<T>
+namespace BinaryHeap
 {
-    public static void Sort(T[] arr)
+    public static class Heap<T> where T : IComparable<T>
     {
-        throw new NotImplementedException();
+        public static void Sort(T[] arr)
+        {
+            throw new NotImplementedException();
+        }
     }
 }
