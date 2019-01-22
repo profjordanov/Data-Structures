@@ -4,6 +4,17 @@ using System.Linq;
 
 namespace BinaryHeap
 {
+    /// <summary>
+    /// Implementation of basic Binary heap.
+    /// Binary heap is a complete binary tree.
+    /// Every level, except the last, is completely filled.
+    /// Last is filled from left to right.
+    /// Efficiently stored in a resizing array <see cref="List{T}"/>.
+    /// - Parent(i) = (i - 1) / 2
+    /// - Left(i) = 2 * i + 1
+    /// - Right(i) = 2 * i + 2
+    /// </summary>
+    /// <typeparam name="T"></typeparam>
     public class BinaryHeap<T> 
         where T : IComparable<T>
     {
