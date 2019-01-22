@@ -1,11 +1,13 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 
 namespace BinaryHeap
 {
     public class BinaryHeap<T> 
         where T : IComparable<T>
     {
+        // container for all the elements
         private List<T> _heap;
 
         public BinaryHeap()
@@ -13,35 +15,53 @@ namespace BinaryHeap
             // TODO
         }
 
-        public int Count
-        {
-            get
-            {
-                throw new NotImplementedException();
-            }
-        }
+        /// <summary>
+        /// Returns the size of the underlying data structure. 
+        /// </summary>
+        public int Count => _heap.Count;
 
         /// <summary>
-        /// O(logN)
+        /// Adds an element.
+        /// Time complexity is O(logN).
         /// </summary>
         /// <param name="item"></param>
         public void Insert(T item)
         {
-            throw new NotImplementedException();
+            _heap.Add(item);
+
         }
 
         /// <summary>
-        /// O(1)
+        /// Returns the maximum element without removing it.
+        /// In a max heap, the max element should always stay at index 0
+        /// Time complexity is O(1).
+        /// Throws an <see cref="InvalidOperationException"/>
+        /// if there is no elements.
         /// </summary>
-        /// <returns></returns>
         public T Peek()
         {
-            throw new NotImplementedException();
+            if (Count == 0)
+            {
+                throw new InvalidOperationException();
+            }
+
+            return _heap[0];
         }
 
         public T Pull()
         {
             throw new NotImplementedException();
         }
+
+        private void HeapifyUp(int index)
+        {
+            while (true)
+            {
+                
+            }
+        }
+
+        private bool IsLess(int other, int index) =>
+            _heap[other].CompareTo(_heap[index]) < 0;
     }
 }
