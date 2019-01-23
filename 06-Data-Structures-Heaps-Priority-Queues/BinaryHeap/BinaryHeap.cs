@@ -1,35 +1,94 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 
-public class BinaryHeap<T> where T : IComparable<T>
+namespace BinaryHeap
 {
-    private List<T> heap;
-
-    public BinaryHeap()
+    /// <summary>
+    /// Implementation of basic Binary heap.
+    /// Binary heap is a complete binary tree.
+    /// Every level, except the last, is completely filled.
+    /// Last is filled from left to right.
+    /// Efficiently stored in a resizing array <see cref="List{T}"/>.
+    /// - Parent(i) = (i - 1) / 2
+    /// - Left(i) = 2 * i + 1
+    /// - Right(i) = 2 * i + 2
+    /// </summary>
+    /// <typeparam name="T"></typeparam>
+    public class BinaryHeap<T> 
+        where T : IComparable<T>
     {
-        // TODO
-    }
+        // container for all the elements
+        private List<T> _heap;
 
-    public int Count
-    {
-        get
+        public BinaryHeap()
+        {
+            _heap = new List<T>();
+        }
+
+        /// <summary>
+        /// Returns the size of the underlying data structure. 
+        /// </summary>
+        public int Count => _heap.Count;
+
+        /// <summary>
+        /// Adds an element at the end and then bubble it up to its correct position.
+        /// Time complexity is O(logN).
+        /// </summary>
+        /// <param name="item"></param>
+        public void Insert(T item)
+        {
+            _heap.Add(item);
+            HeapifyUp(_heap.Count - 1);
+        }
+
+        /// <summary>
+        /// Returns the maximum element without removing it.
+        /// In a max heap, the max element should always stay at index 0
+        /// Time complexity is O(1).
+        /// Throws an <see cref="InvalidOperationException"/>
+        /// if there is no elements.
+        /// </summary>
+        public T Peek()
+        {
+            if (Count == 0)
+            {
+                throw new InvalidOperationException();
+            }
+
+            return _heap[0];
+        }
+
+        public T Pull()
         {
             throw new NotImplementedException();
         }
-    }
 
-    public void Insert(T item)
-    {
-        throw new NotImplementedException();
-    }
+        /// <summary>
+        /// Bubble up the element towards the top of the pile.
+        /// </summary>
+        /// <param name="index">Element index</param>
+        private void HeapifyUp(int index)
+        {
+            //While the index is greater than 0 (the element has a parent)
+            //and is greater than its parent, swap child with parent. 
+            while (index > 0 && IsLess(Parent(index), index))
+            {
+                Swap(index, Parent(index));
+                index = Parent(index);
+            }
+        }
 
-    public T Peek()
-    {
-        throw new NotImplementedException();
-    }
+        private bool IsLess(int other, int index) =>
+            _heap[other].CompareTo(_heap[index]) < 0;
 
-    public T Pull()
-    {
-        throw new NotImplementedException();
+        private static int Parent(int index) => (index - 1) / 2;
+
+        private void Swap(int index, int other)
+        {
+            T temp = _heap[index];
+            _heap[index] = _heap[other];
+            _heap[other] = temp;
+        }
     }
 }
