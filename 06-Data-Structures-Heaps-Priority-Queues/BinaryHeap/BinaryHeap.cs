@@ -88,7 +88,7 @@ namespace BinaryHeap
         /// Bubble up the element towards the top of the pile.
         /// </summary>
         /// <param name="index">Element index</param>
-        private void HeapifyUp(int index)
+        protected virtual void HeapifyUp(int index)
         {
             //While the index is greater than 0 (the element has a parent)
             //and is greater than its parent, swap child with parent. 
@@ -104,9 +104,9 @@ namespace BinaryHeap
         /// has no children or it is greater than its both children.
         /// </summary>
         /// <param name="index"></param>
-        private void HeapifyDown(int index)
+        protected virtual void HeapifyDown(int index)
         {
-            while (index < Count - 1)
+            while (index < Count / 2)
             {
                 var child = Left(index);
 
@@ -127,7 +127,7 @@ namespace BinaryHeap
 
         private bool HasChild(int childIndex) => childIndex < Count;
 
-        private int Left(int index) => index * 2 + 1;
+        private static int Left(int index) => index * 2 + 1;
 
         private bool IsLess(int other, int index) =>
             _heap[other].CompareTo(_heap[index]) < 0;
