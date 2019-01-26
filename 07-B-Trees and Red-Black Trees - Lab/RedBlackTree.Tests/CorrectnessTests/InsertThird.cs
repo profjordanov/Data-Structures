@@ -1,4 +1,5 @@
 ﻿using NUnit.Framework;
+using RedBlackTree;
 
 [TestFixture]
 class InsertThird

@@ -1,21 +1,23 @@
-﻿using System;
-using NUnit.Framework;
+﻿using NUnit.Framework;
 
-[TestFixture]
-public class FifthTest
+namespace RedBlackTree.Tests.TimeTests
 {
-    [Test]
-    [Timeout(600)]
-    public void Insert_MultipleElements_ShouldHaveQuickFind()
+    [TestFixture]
+    public class FifthTest
     {
-        RedBlackTree<int> rbt = new RedBlackTree<int>();
-
-        for (int i = 0; i < 100000; i++)
+        [Test]
+        [Timeout(600)]
+        public void Insert_MultipleElements_ShouldHaveQuickFind()
         {
-            rbt.Insert(i);
-        }
+            RedBlackTree<int> rbt = new RedBlackTree<int>();
+
+            for (int i = 0; i < 100000; i++)
+            {
+                rbt.Insert(i);
+            }
         
-        Assert.AreEqual(true, rbt.Contains(99999));
+            Assert.AreEqual(true, rbt.Contains(99999));
+        }
     }
 }
 
