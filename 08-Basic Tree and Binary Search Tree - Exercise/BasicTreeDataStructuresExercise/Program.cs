@@ -9,9 +9,9 @@ namespace BasicTreeDataStructuresExercise
     internal class Program
     {
         // allows to find the tree nodes during the tree construction
-        private static Dictionary<int, Tree<int>> _nodeByValue = new Dictionary<int, Tree<int>>();
+        private static readonly Dictionary<int, Tree<int>> NodeByValue = new Dictionary<int, Tree<int>>();
 
-        private static void Main(string[] args)
+        private static void Main()
         {
             ReadTree();
 
@@ -30,6 +30,10 @@ namespace BasicTreeDataStructuresExercise
             WriteLine($"Leaf nodes: {string.Join(" ", leaves)}");
             WriteLine("-----------------------------");
 
+            /* 04. Middle Nodes */
+            var middleNodes = MiddleNodes();
+            WriteLine($"Middle nodes: {string.Join(" ", middleNodes)}");
+            WriteLine("-----------------------------");
         }
 
         private static void ReadTree()
@@ -58,16 +62,16 @@ namespace BasicTreeDataStructuresExercise
         // finds the tree node by its value or create a new node if it does not exist
         private static Tree<int> GetTreeNodeByValue(int value)
         {
-            if (!_nodeByValue.ContainsKey(value))
+            if (!NodeByValue.ContainsKey(value))
             {
-                _nodeByValue[value] = new Tree<int>(value);
+                NodeByValue[value] = new Tree<int>(value);
             }
 
-            return _nodeByValue[value];
+            return NodeByValue[value];
         }
 
         private static Tree<int> GetRootNode() =>
-            _nodeByValue.Values.FirstOrDefault(tree => tree.Parent == null);
+            NodeByValue.Values.FirstOrDefault(tree => tree.Parent == null);
 
         // Recursively prints the tree from given node
         // Format: each level indented + 2 spaces.
@@ -83,9 +87,18 @@ namespace BasicTreeDataStructuresExercise
 
         // Finds all leaf nodes (in increasing order)
         private static IOrderedEnumerable<int> LeafNodes() =>
-            _nodeByValue
+            NodeByValue
                 .Values
                 .Where(tree => tree.Children.Count == 0)
+                .Select(tree => tree.Value)
+                .OrderBy(val => val);
+
+        // Find all middle nodes (in increasing order)
+        private static IOrderedEnumerable<int> MiddleNodes() =>
+            NodeByValue
+                .Values
+                .Where(tree => tree.Parent != null &&
+                               tree.Children.Count > 0)
                 .Select(tree => tree.Value)
                 .OrderBy(val => val);
     }
