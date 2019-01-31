@@ -25,6 +25,11 @@ namespace BasicTreeDataStructuresExercise
             PrintTreeIndented(root);
             WriteLine("-----------------------------");
 
+            /* 03. Leaf Nodes */
+            var leaves = LeafNodes();
+            WriteLine($"Leaf nodes: {string.Join(" ", leaves)}");
+            WriteLine("-----------------------------");
+
         }
 
         private static void ReadTree()
@@ -75,5 +80,13 @@ namespace BasicTreeDataStructuresExercise
                 PrintTreeIndented(child, indent + 1);
             }
         }
+
+        // Finds all leaf nodes (in increasing order)
+        private static IOrderedEnumerable<int> LeafNodes() =>
+            _nodeByValue
+                .Values
+                .Where(tree => tree.Children.Count == 0)
+                .Select(tree => tree.Value)
+                .OrderBy(val => val);
     }
 }
