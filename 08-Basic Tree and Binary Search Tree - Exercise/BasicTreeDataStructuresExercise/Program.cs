@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-
+using System.Threading.Tasks;
 using static System.Console;
 
 namespace BasicTreeDataStructuresExercise
@@ -26,13 +26,17 @@ namespace BasicTreeDataStructuresExercise
             WriteLine("-----------------------------");
 
             /* 03. Leaf Nodes */
-            var leaves = LeafNodes();
+            var leaves = GetLeafNodes();
             WriteLine($"Leaf nodes: {string.Join(" ", leaves)}");
             WriteLine("-----------------------------");
 
             /* 04. Middle Nodes */
-            var middleNodes = MiddleNodes();
+            var middleNodes = GetMiddleNodes();
             WriteLine($"Middle nodes: {string.Join(" ", middleNodes)}");
+            WriteLine("-----------------------------");
+
+            /* 05. Deepest Node */
+            WriteLine($"Deepest node: {DeepestNode}");
             WriteLine("-----------------------------");
         }
 
@@ -86,20 +90,37 @@ namespace BasicTreeDataStructuresExercise
         }
 
         // Finds all leaf nodes (in increasing order)
-        private static IOrderedEnumerable<int> LeafNodes() =>
+        private static IOrderedEnumerable<int> GetLeafNodes() =>
             NodeByValue
                 .Values
                 .Where(tree => tree.Children.Count == 0)
                 .Select(tree => tree.Value)
                 .OrderBy(val => val);
 
-        // Find all middle nodes (in increasing order)
-        private static IOrderedEnumerable<int> MiddleNodes() =>
+        private static Task<IOrderedEnumerable<int>> GetLeafNodesAsync() =>
+            Task.Run(() => GetLeafNodes());
+
+        // Finds all middle nodes (in increasing order)
+        private static IOrderedEnumerable<int> GetMiddleNodes() =>
             NodeByValue
                 .Values
                 .Where(tree => tree.Parent != null &&
                                tree.Children.Count > 0)
                 .Select(tree => tree.Value)
                 .OrderBy(val => val);
+
+        // Finds tree's leftmost deepest node
+        private static int DeepestNode => GetLeafNodes().ToArray().FirstOrDefault();
+
+        private static Stack<int> GetLongestPath()
+        {
+            var leaves = GetLeafNodesAsync();
+
+            var maxDepth = 0;
+            var deepestNode = GetRootNode().Value;
+
+            return new Stack<int>();
+        }
     }
 }
+
