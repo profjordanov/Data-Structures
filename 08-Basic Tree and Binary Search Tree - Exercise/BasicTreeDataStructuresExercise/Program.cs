@@ -38,6 +38,17 @@ namespace BasicTreeDataStructuresExercise
             /* 05. Deepest Node */
             WriteLine($"Deepest node: {DeepestNode}");
             WriteLine("-----------------------------");
+
+            /* 06. Longest Path */
+            var path = GetLongestPath();
+            WriteLine($"Longest path: {string.Join(" ", path)}");
+            WriteLine("-----------------------------");
+
+            /* 07. All Paths With a Given Sum */
+            WriteLine("Insert Path Sum: ");
+            var targetSum = int.Parse(ReadLine());
+            PrintPathsByGivenSum(targetSum);
+            WriteLine("-----------------------------");
         }
 
         private static void ReadTree()
@@ -112,14 +123,64 @@ namespace BasicTreeDataStructuresExercise
         // Finds tree's leftmost deepest node
         private static int DeepestNode => GetLeafNodes().ToArray().FirstOrDefault();
 
-        private static Stack<int> GetLongestPath()
+        // Finds the longest path in the tree
+        // (the leftmost if several paths have the same longest length)
+        private static IEnumerable<int> GetLongestPath()
         {
-            var leaves = GetLeafNodesAsync();
+            var current = GetTreeNodeByValue(DeepestNode);
 
-            var maxDepth = 0;
-            var deepestNode = GetRootNode().Value;
+            var path = new Stack<int>();
 
-            return new Stack<int>();
+            while (current != null)
+            {
+                path.Push(current.Value);
+                current = current.Parent;
+            }
+
+            return path;
+        }
+
+        // Finds all paths in the tree with given sum
+        // of their nodes (from the leftmost to the rightmost)
+        // and prints them on the console 
+        private static void PrintPathsByGivenSum(int targetSum)
+        {
+            var nodes = new List<Tree<int>>();
+            var root = GetRootNode();
+            Dfs(root, nodes);
+            WriteLine($"Paths of sum {targetSum}:");
+            foreach (var tree in nodes)
+            {
+                var (path, sum) = PathAndSumByTree(tree);
+                if (sum == targetSum)
+                {
+                    WriteLine(path);
+                }
+            }
+        }
+
+        private static (string path, int sum) PathAndSumByTree(Tree<int> tree)
+        {
+            var sum = 0;
+            var path = new Stack<int>();
+            while (tree != null)
+            {
+                sum += tree.Value;
+                path.Push(tree.Value);
+                tree = tree.Parent;
+            }
+
+            return (string.Join(" ", path),sum);
+        }
+
+        private static void Dfs(Tree<int> node, ICollection<Tree<int>> nodes)
+        {
+            foreach (var child in node.Children)
+            {
+                Dfs(child, nodes);
+            }
+
+            nodes.Add(node);
         }
     }
 }
