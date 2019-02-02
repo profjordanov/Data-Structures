@@ -49,6 +49,8 @@ namespace BasicTreeDataStructuresExercise
             var targetSum = int.Parse(ReadLine());
             PrintPathsByGivenSum(targetSum);
             WriteLine("-----------------------------");
+
+
         }
 
         private static void ReadTree()
@@ -182,6 +184,43 @@ namespace BasicTreeDataStructuresExercise
 
             nodes.Add(node);
         }
+
+        // Find all subtrees with given sum of their nodes
+        // (from the leftmost to the rightmost).
+        // Print subtrees in pre-order sequence.
+        private static void PrintSubtreesByGivenSum(int targetSum)
+        {
+            var nodes = new List<Tree<int>>();
+            var root = GetRootNode();
+            Dfs(root, nodes);
+            WriteLine($"Subtrees of sum {targetSum}");
+            foreach (var tree in nodes)
+            {
+                var sum = CalculateSubtreeSum(tree);
+                if (sum != targetSum)
+                {
+                    continue;
+                }
+
+                var subtree = new List<int>();
+                GetSubtreePreOrder(tree, subtree);
+                WriteLine(string.Join(" ", subtree));
+            }
+        }
+
+        private static int CalculateSubtreeSum(Tree<int> node) =>
+            node.Value + node.Children.Sum(child => CalculateSubtreeSum(child));
+
+        private static void GetSubtreePreOrder(Tree<int> tree, List<int> subtree)
+        {
+            subtree.Add(tree.Value);
+
+            foreach (var child in tree.Children)
+            {
+                GetSubtreePreOrder(child, subtree);
+            }
+        }
+
     }
 }
 
