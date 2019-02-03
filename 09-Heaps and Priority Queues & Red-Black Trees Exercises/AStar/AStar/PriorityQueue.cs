@@ -4,48 +4,45 @@ using System.Linq;
 
 public class PriorityQueue<T> where T : IComparable<T>
 {
-    private List<T> heap;
+    private readonly List<T> _heap;
 
     public PriorityQueue()
     {
-        this.heap = new List<T>();
+        _heap = new List<T>();
     }
 
-    public int Count
-    {
-        get { return this.heap.Count; }
-    }
+    public int Count => _heap.Count;
 
     public void Enqueue(T item)
     {
-        this.heap.Add(item);
-        this.HeapifyUp(this.heap.Count - 1);
+        _heap.Add(item);
+        HeapifyUp(_heap.Count - 1);
     }
 
     public T Peek()
     {
-        return this.heap[0];
+        return _heap[0];
     }
 
     public T Dequeue()
     {
-        if (this.Count <= 0)
+        if (Count <= 0)
         {
             throw new InvalidOperationException();
         }
 
-        T item = this.heap[0];
+        T item = _heap[0];
 
-        this.Swap(0, this.heap.Count() - 1);
-        this.heap.RemoveAt(this.heap.Count() - 1);
-        this.HeapifyDown(0);
+        Swap(0, _heap.Count() - 1);
+        _heap.RemoveAt(_heap.Count() - 1);
+        HeapifyDown(0);
 
         return item;
     }
 
     public void DecreaseKey(T item)
     {
-        var index = this.heap.IndexOf(item);
+        var index = _heap.IndexOf(item);
 
         HeapifyUp(index);
     }
@@ -54,14 +51,14 @@ public class PriorityQueue<T> where T : IComparable<T>
     {
         while (index > 0 && IsLess(index, Parent(index)))
         {
-            this.Swap(index, Parent(index));
+            Swap(index, Parent(index));
             index = Parent(index);
         }
     }
 
     private void HeapifyDown(int index)
     {
-        while (index < this.heap.Count / 2)
+        while (index < _heap.Count / 2)
         {
             int child = Left(index);
             if (HasChild(child + 1) && IsLess(child + 1, child))
@@ -74,14 +71,14 @@ public class PriorityQueue<T> where T : IComparable<T>
                 break;
             }
 
-            this.Swap(index, child);
+            Swap(index, child);
             index = child;
         }
     }
 
     private bool HasChild(int child)
     {
-        return child < this.heap.Count;
+        return child < _heap.Count;
     }
 
     private static int Parent(int index)
@@ -101,13 +98,13 @@ public class PriorityQueue<T> where T : IComparable<T>
 
     private bool IsLess(int a, int b)
     {
-        return this.heap[a].CompareTo(this.heap[b]) < 0;
+        return _heap[a].CompareTo(_heap[b]) < 0;
     }
 
     private void Swap(int a, int b)
     {
-        T temp = this.heap[a];
-        this.heap[a] = this.heap[b];
-        this.heap[b] = temp;
+        T temp = _heap[a];
+        _heap[a] = _heap[b];
+        _heap[b] = temp;
     }
 }
