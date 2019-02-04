@@ -65,7 +65,8 @@ public class TestsPriorityQueue
     }
 }
 
-class TestNode<T> : IComparable<TestNode<T>> where T : IComparable<T>
+internal class TestNode<T> : IComparable<TestNode<T>> 
+    where T : IComparable<T>
 {
     public T Value { get; set; }
 
