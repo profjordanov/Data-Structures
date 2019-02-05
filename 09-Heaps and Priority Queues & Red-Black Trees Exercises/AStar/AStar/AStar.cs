@@ -21,7 +21,6 @@ public class AStar
 
     /// <summary>
     ///  H is the approximation of the distance from the current node to the goal.
-    /// 
     /// </summary>
     /// <param name="current"></param>
     /// <param name="goal"></param>
@@ -40,16 +39,21 @@ public class AStar
 
     public IEnumerable<Node> GetPath(Node start, Node goal)
     {
+        // priority queue containing START
         var priorityQueue = new PriorityQueue<Node>(); // min priority heap => min fCost
+        // storing the node from which we have reached a node (following a path)
         var parents = new Dictionary<Node, Node>();
+        // storing cost from the start to a node (following a path)
         var gCost = new Dictionary<Node, int>();
 
         priorityQueue.Enqueue(start);
         parents[start] = null;
         gCost[start] = 0;
 
+        // while OPEN is not empty
         while (priorityQueue.Count > 0)
         {
+            // remove highest priority item from OPEN
             var current = priorityQueue.Dequeue();
 
             if (current.Equals(goal))
@@ -57,27 +61,33 @@ public class AStar
                 break;
             }
 
-            var neighbours = AddAdjacentNodes(current);
+            // neighbor of current (up, right, down, left)
+            var neighbors = AddAdjacentNodes(current);
             var newGCost = gCost[current] + 1;
 
-            foreach (var neighbour in neighbours)
+            foreach (var neighbor in neighbors)
             {
-                if (!gCost.ContainsKey(neighbour) || newGCost < gCost[neighbour])
+                // if neighbor is not in COST or new cost < COST[neighbor]
+                if (gCost.ContainsKey(neighbor) && newGCost >= gCost[neighbor])
                 {
-                    gCost[neighbour] = newGCost;
-                    neighbour.F = newGCost + GetH(neighbour, goal); // fCost = gCost + hCost
-
-                    parents[neighbour] = current;
-
-                    priorityQueue.Enqueue(neighbour);
+                    continue;
                 }
+                gCost[neighbor] = newGCost;
+                neighbor.F = newGCost + GetH(neighbor, goal); // fCost = gCost + hCost
+
+                parents[neighbor] = current;
+
+                priorityQueue.Enqueue(neighbor);
             }
         }
 
         return ReconstructPath(parents, start, goal);
     }
 
-    private IEnumerable<Node> ReconstructPath(Dictionary<Node, Node> parents, Node start, Node goal)
+    private static IEnumerable<Node> ReconstructPath(
+        IReadOnlyDictionary<Node, Node> parents,
+        Node start,
+        Node goal)
     {
         var path = new Stack<Node>();
 
@@ -97,32 +107,34 @@ public class AStar
         return path;
     }
 
-    private List<Node> AddAdjacentNodes(Node current)
+    private IEnumerable<Node> AddAdjacentNodes(Node current)
     {
-        var neighbours = new List<Node>();
+        var neighbors = new List<Node>();
 
-        AddNeighbour(neighbours, current.Row - 1, current.Col);
-        AddNeighbour(neighbours, current.Row + 1, current.Col);
-        AddNeighbour(neighbours, current.Row, current.Col - 1);
-        AddNeighbour(neighbours, current.Row, current.Col + 1);
+        AddNeighbors(neighbors, current.Row - 1, current.Col);
+        AddNeighbors(neighbors, current.Row + 1, current.Col);
+        AddNeighbors(neighbors, current.Row, current.Col - 1);
+        AddNeighbors(neighbors, current.Row, current.Col + 1);
 
-        return neighbours;
+        return neighbors;
     }
 
-    private void AddNeighbour(List<Node> neighbours, int row, int col)
+    private void AddNeighbors(ICollection<Node> neighbors, int row, int col)
     {
         if (IsInsideMap(row, col) && IsAccessible(row, col))
         {
-            var neighbour = new Node(row, col);
-            neighbours.Add(neighbour);
+            var neighbor = new Node(row, col);
+            neighbors.Add(neighbor);
         }
     }
 
-    private bool IsInsideMap(int row, int col)
-        => row >= 0 && row < _map.GetLength(0)
-        && col >= 0 && col < _map.GetLength(1);
+    private bool IsInsideMap(int row, int col) =>
+        row >= 0 &&
+        row < _map.GetLength(0) &&
+        col >= 0 &&
+        col < _map.GetLength(1);
 
-    private bool IsAccessible(int row, int col)
-        => _map[row, col] != Wall;
+    private bool IsAccessible(int row, int col) =>
+        _map[row, col] != Wall;
 }
 
