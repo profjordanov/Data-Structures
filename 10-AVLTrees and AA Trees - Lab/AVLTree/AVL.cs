@@ -38,10 +38,7 @@ namespace AVLTree
 		/// Performs an action in order on each element. 
 		/// </summary>
 		/// <param name="action"></param>
-		public void EachInOrder(Action<T> action)
-		{
-			EachInOrder(Root, action);
-		}
+		public void EachInOrder(Action<T> action) => EachInOrder(Root, action);
 
 		private static Node<T> Insert(Node<T> node, T item)
 		{
@@ -74,7 +71,7 @@ namespace AVLTree
 		/// <param name="node"></param>
 		/// <param name="item"></param>
 		/// <returns></returns>
-		private Node<T> Search(Node<T> node, T item)
+		private static Node<T> Search(Node<T> node, T item)
 		{
 			if (node == null)
 			{
@@ -95,7 +92,7 @@ namespace AVLTree
 			return node;
 		}
 
-		private void EachInOrder(Node<T> node, Action<T> action)
+		private static void EachInOrder(Node<T> node, Action<T> action)
 		{
 			if (node == null)
 			{
