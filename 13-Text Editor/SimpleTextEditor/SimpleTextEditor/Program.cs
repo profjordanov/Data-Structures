@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Text.RegularExpressions;
 
 namespace SimpleTextEditor
@@ -21,7 +22,7 @@ namespace SimpleTextEditor
 				}
 
 				var match = regex.Match(line ?? throw new InvalidOperationException("Input cannot be null!"));
-				string str;
+				var str = string.Empty;
 
 				if (match.Success)
 				{
@@ -44,6 +45,44 @@ namespace SimpleTextEditor
 						ProcessUsers(textEditor, commandArgs);
 						break;
 					default:
+						// {username} {command} {params}
+						var username = commandArgs[ 0 ];
+
+						// Ignore commands if user is not logged in
+						if(!textEditor.Users(username).Contains(username))
+						{
+							break;
+						}
+
+						command = commandArgs[ 1 ];
+						commandArgs = commandArgs.Skip(2).ToArray();
+						switch(command)
+						{
+							case "insert":
+								ProcessInsert(textEditor, username, commandArgs, str);
+								break;
+							case "prepend":
+								textEditor.Prepend(username, str);
+								break;
+							case "substring":
+								ProcessSubstring(textEditor, username, commandArgs);
+								break;
+							case "delete":
+								ProcessDelete(textEditor, username, commandArgs);
+								break;
+							case "clear":
+								textEditor.Clear(username);
+								break;
+							case "length":
+								Console.WriteLine(textEditor.Length(username));
+								break;
+							case "print":
+								Console.WriteLine(textEditor.Print(username));
+								break;
+							case "undo":
+								textEditor.Undo(username);
+								break;
+						}
 						break;
 				}
 			}
