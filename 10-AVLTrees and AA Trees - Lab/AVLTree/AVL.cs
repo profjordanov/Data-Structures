@@ -3,7 +3,7 @@
 namespace AVLTree
 {
 	/// <summary>
-	/// AVL tree is a self-balancing binary-search tree.
+	/// Adelson-Velsky and Landis tree is a self-balancing binary-search tree.
 	/// Height of two subtrees can differ by at most 1.
 	/// Height difference is measured by a balance factor (BF).
 	/// - BF(Tree) = Height(Left) – Height(Right).
