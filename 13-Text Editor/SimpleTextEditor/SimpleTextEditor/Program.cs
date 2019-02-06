@@ -37,6 +37,14 @@ namespace SimpleTextEditor
 					case "login":
 						ProcessLogin(textEditor,commandArgs);
 						break;
+					case "logout":
+						ProcessLogout(textEditor, commandArgs);
+						break;
+					case "users":
+						ProcessUsers(textEditor, commandArgs);
+						break;
+					default:
+						break;
 				}
 			}
 		}
