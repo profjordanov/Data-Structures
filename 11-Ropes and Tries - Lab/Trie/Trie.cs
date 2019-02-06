@@ -3,6 +3,15 @@ using System.Collections.Generic;
 
 namespace Trie
 {
+	/// <summary>
+	/// Trie (prefix tree) is an ordered tree data structure.
+	/// - Special tree structure used for fast multi-pattern matching.
+	/// - Used to store a dynamic set where the keys are usually strings.
+	/// Performance:
+	/// - Fast search by prefix
+	/// - High memory footprint
+	/// </summary>
+	/// <typeparam name="TValue"></typeparam>
 	public class Trie<TValue>
 	{
 		private Node _root;
@@ -20,7 +29,7 @@ namespace Trie
 
 		public bool Contains(string key)
 		{
-			var node = GetNode(this._root, key, 0);
+			var node = GetNode(_root, key, 0);
 			return node != null && node.IsTerminal;
 		}
 
@@ -34,12 +43,12 @@ namespace Trie
 			var results = new Queue<string>();
 			var x = GetNode(_root, prefix, 0);
 
-			this.Collect(x, prefix, results);
+			Collect(x, prefix, results);
         
 			return results;
 		}
 
-		private Node GetNode(Node x, string key, int d)
+		private static Node GetNode(Node x, string key, int d)
 		{
 			if (x == null)
 			{
@@ -62,13 +71,46 @@ namespace Trie
 			return GetNode(node, key, d + 1);
 		}
 
-		private Node Insert(Node x, string key, TValue val, int d)
+		/// <summary>
+		/// Recursive insertion functionality of the trie. 
+		/// </summary>
+		/// <param name="node"></param>
+		/// <param name="key"></param>
+		/// <param name="val"></param>
+		/// <param name="index"></param>
+		/// <returns></returns>
+		private static Node Insert(Node node, string key, TValue val, int index)
 		{
-			//ToDo: Create insert
-			throw new NotImplementedException();
+			// checks if the given node is null
+			if(node == null)
+			{
+				// create and assign a new node 
+				node = new Node();
+			}
+
+			// checks if you are at the last symbol of the key 
+			if(key.Length == index)
+			{
+				// makes the node terminal
+				node.IsTerminal = true;
+				// assigns the value
+				node.Val = val;
+				// returns the node
+				return node;
+			}
+
+			var currentSymbol = key[index];
+			var nextNode = GetNextNode(node, currentSymbol);
+
+			node.Next[currentSymbol] = Insert(nextNode, key, val, index + 1);
+
+			return node;
 		}
 
-		private void Collect(Node x, string prefix, Queue<string> results)
+		private static Node GetNextNode(Node node, char currentSymbol) =>
+			node.Next.ContainsKey(currentSymbol) ? node.Next[currentSymbol] : null;
+
+		private static void Collect(Node x, string prefix, Queue<string> results)
 		{
 			if (x == null)
 			{
