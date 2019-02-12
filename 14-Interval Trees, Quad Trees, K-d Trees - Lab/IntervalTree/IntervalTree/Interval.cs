@@ -1,5 +1,10 @@
 ﻿using System;
 
+/// <summary>
+/// Implementation of set of real numbers
+/// with the property that any number that
+/// lies between two numbers in the set is also included in the set.
+/// </summary>
 public class Interval
 {
     public double Lo { get; set; }
@@ -8,32 +13,32 @@ public class Interval
     public Interval(double lo, double hi)
     {
         ValidateInterval(lo, hi);
-        this.Lo = lo;
-        this.Hi = hi;
+        Lo = lo;
+        Hi = hi;
     }
 
     public bool Intersects(double lo, double hi)
     {
         ValidateInterval(lo, hi);
-        return this.Lo < hi && this.Hi > lo;
+        return Lo < hi && Hi > lo;
     }
 
     public override bool Equals(object obj)
     {
         var other = (Interval)obj;
-        return this.Lo == other.Lo && this.Hi == other.Hi;
+        return Lo == other.Lo && Hi == other.Hi;
     }
 
     public override string ToString()
     {
-        return string.Format("({0}, {1})", this.Lo, this.Hi);
+        return $"({Lo}, {Hi})";
     }
 
     private static void ValidateInterval(double lo, double hi)
     {
         if (hi < lo)
         {
-            throw new ArgumentException();
+            throw new ArgumentException($"Low value {lo} cannot be higher than {hi}!");
         }
     }
 }
