@@ -179,34 +179,55 @@ public class HashTable<TKey, TValue> : IEnumerable<KeyValue<TKey, TValue>>
 		return null;
 	}
 
-
 	/// <param name="key"></param>
 	/// <returns>Whether the key exists in the hash table.</returns>
 	public bool ContainsKey(TKey key) =>
 		Find(key) != null;
 
-    public bool Remove(TKey key)
+	/// <summary>
+	/// Removes an element by its key (when the key exists).
+	/// </summary>
+	/// <param name="key"></param>
+	/// <returns>If key does exist in the hash table.</returns>
+	public bool Remove(TKey key)
     {
-        throw new NotImplementedException();
+		// finds the slot that is expected to hold the key, 
+		var slotNumber = FindSlotNumber(key);
+	    var elements = _slots[slotNumber];
+	    if (elements == null)
+	    {
+		    return false;
+	    }
+
+		// traverse the linked list
+		foreach(var element in elements)
+	    {
+		    if (!element.Key.Equals(key))
+		    {
+			    continue;
+		    }
+			// remove the element is case the key is found 
+			elements.Remove(element);
+		    Count--;
+		    return true;
+	    }
+
+	    return false;
     }
 
     public void Clear() => InitializeHashTable();
 
-	public IEnumerable<TKey> Keys
-    {
-        get
-        {
-            throw new NotImplementedException();
-        }
-    }
+	/// <summary>
+	/// Enumerates all keys. 
+	/// </summary>
+	public IEnumerable<TKey> Keys =>
+	    this.Select(element => element.Key);
 
-    public IEnumerable<TValue> Values
-    {
-        get
-        {
-            throw new NotImplementedException();
-        }
-    }
+	/// <summary>
+	/// Enumerates all values. 
+	/// </summary>
+	public IEnumerable<TValue> Values =>
+		this.Select(element => element.Value);
 
     /// <summary>
     /// Method that passed through all elements in the hash table exactly once.
@@ -225,8 +246,6 @@ public class HashTable<TKey, TValue> : IEnumerable<KeyValue<TKey, TValue>>
 			.Where(elements => elements != null)
 			.SelectMany(elements => elements)
 			.GetEnumerator();
-
-
 
 	// HELPER METHODS
 	private void InitializeHashTable(int capacity = DefaultCapacity)
