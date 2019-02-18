@@ -40,6 +40,7 @@
     <Compile Include="HashTable.cs" />
     <Compile Include="HashTableExample.cs" />
     <Compile Include="KeyValue.cs" />
+    <Compile Include="Set.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
