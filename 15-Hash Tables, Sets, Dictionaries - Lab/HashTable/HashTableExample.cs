@@ -7,10 +7,10 @@ class Example
 {
 	private static void Main()
     {
-		//CountSymbols();
-		//Phonebook();
+		CountSymbols();
+		Phonebook();
 
-		//DemoHashTable();
+		DemoHashTable();
 		DemoSet();
 		DemoHashSet();
     }
@@ -123,6 +123,8 @@ class Example
 	private static void DemoSet()
 	{
 		var setA = new Set<int>();
+		setA.Add(1);
+		setA.Add(1);
 		setA.Add(1);
 		setA.Add(5);
 		setA.Add(2);
