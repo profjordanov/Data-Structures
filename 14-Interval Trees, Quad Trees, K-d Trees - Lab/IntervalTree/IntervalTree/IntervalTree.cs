@@ -33,22 +33,59 @@ public class IntervalTree
 			if (current.left != null &&
 			    current.left.max > lo)
 			{
-				
+				current = current.left;
+			}
+			else
+			{
+				current = current.right;
 			}
 		}
+
+		return current?.interval;
 	}
 
 	/// <returns>
 	/// All intervals that intersect the given lower and upper bound.
+	/// Time complexity - O(log n).
 	/// </returns>
 	/// <param name="lo"></param>
 	/// <param name="hi"></param>
 	public IEnumerable<Interval> SearchAll(double lo, double hi)
     {
-        throw new NotImplementedException();
+		var result = new List<Interval>();
+		SearchAll(_root, lo, hi, result);
+		return result;
     }
 
 	// HELPER METHODS
+	// Search In Order
+	private void SearchAll(Node node, double lo, double hi, List<Interval> result)
+	{
+		if (node == null)
+		{
+			return;
+		}
+
+		// Search Left
+		if (node.left != null && 
+		    node.left.max > lo)
+		{
+			SearchAll(node.left, lo, hi, result);
+		}
+
+		// Search Root
+		if (node.interval.Intersects(lo, hi))
+		{
+			result.Add(node.interval);
+		}
+
+		// Search Right
+		if (node.right != null && 
+		    node.right.interval.Lo < hi)
+		{
+			SearchAll(node.right, lo, hi, result);
+		}
+	}
 
 	/// <summary>
 	/// Update the max endpoint whenever you insert (or delete/balance) a node.
