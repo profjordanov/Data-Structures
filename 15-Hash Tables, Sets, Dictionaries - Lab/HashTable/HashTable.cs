@@ -44,7 +44,8 @@ public class HashTable<TKey, TValue> : IEnumerable<KeyValue<TKey, TValue>>
 
 	/// <summary>
 	/// Inserts a new element in the hash table.
-	/// Throws an exception if key already exists. 
+	/// Throws an exception if key already exists.
+	/// Amortized complexity O(1) – constant time.
 	/// </summary>
 	/// <param name="key"></param>
 	/// <param name="value"></param>
@@ -131,6 +132,7 @@ public class HashTable<TKey, TValue> : IEnumerable<KeyValue<TKey, TValue>>
 
 	/// <summary>
 	/// Conditional find by key.
+	/// Amortized complexity O(1) – constant time.
 	/// </summary>
 	/// <param name="key"></param>
 	/// <param name="value"></param>
@@ -186,6 +188,7 @@ public class HashTable<TKey, TValue> : IEnumerable<KeyValue<TKey, TValue>>
 
 	/// <summary>
 	/// Removes an element by its key (when the key exists).
+	/// Amortized complexity O(1) – constant time.
 	/// </summary>
 	/// <param name="key"></param>
 	/// <returns>If key does exist in the hash table.</returns>
