@@ -238,6 +238,7 @@ public class HashTable<TKey, TValue> : IEnumerable<KeyValue<TKey, TValue>>
     /// <returns></returns>
     IEnumerator IEnumerable.GetEnumerator() => GetEnumerator();
 
+	/// <inheritdoc />
 	/// <summary>
 	/// Passes through all slots and through all elements in the linked list in each slot
 	/// and returns the elements in a sequence (as a stream).
