@@ -1,4 +1,10 @@
-﻿public interface IBoundable
+﻿namespace QuadTree.Core
 {
-    Rectangle Bounds { get; set; }
+	/// <summary>
+	/// Implemented by classes which can be stored in the <see cref="QuadTree{T}"/>.
+	/// </summary>
+	public interface IBoundable
+	{
+		Rectangle Bounds { get; set; }
+	}
 }
